@@ -1,0 +1,40 @@
+Lezione 3
+
+- Esercizi
+    sito: https://codesignal.com/
+
+- Premi ctrl+C nel terminale per fermare il programma
+
+- Scope (visibilità variabili)
+    Prima fa una passata delle variabili esistenti e le predichiara,
+    poi passa agli assegnamenti e chiamate.
+
+    es.
+        a=1;
+        console.log(a); --> non da' errore
+        var a;
+        //Se non avessimo aggiunto "var a;" dopo, allora avrebbe dato errore.
+
+- Aggiornamento --> ES6 javascript
+    Nuovi aggiornamenti di questa versione, consulta.
+    es: for(obj in list) o for(obj of list), introduzione "let" che sostituisce
+    var (ha una liberta' più ristretta, per evitare errori di scope)
+- Arrow function
+    function(a){}
+    (a)=>{} //parametro
+
+- Libreria http
+const http = require("http"); //libreria http
+const server = http.createServe(function (request, response) {
+    ...     
+    });
+request = tutto ciò che viene richiesto a http
+response = ciò che necessitiamo per inviare poi la risposta
+
+NB: vai a vedere nello specifico event "data", "end", "close" presenti nella documentazione.
+NB: se si cerca di usare due applicazione sulla stessa porta,
+da' un errore perche' il server non sa più dove indirizzare la richiesta.
+
+- Risposte standard
+    200 = 0k
+    404 = risorsa non trovata
