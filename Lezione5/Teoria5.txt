@@ -1,0 +1,51 @@
+Lezione5 --> Express.js
+
+- A cosa serve? --> semplifica i lavori del server
+
+    1. Creazione pacchetto diretta (lasciando tutto di default)
+        comando --> npm init --yes
+
+    2. Installa pacchetto e aggiungilo alle dipendenze
+        comando --> npm install express --save
+        (scritto nel file package.json nelle "dependencies")
+
+- Differenze con http ? --> Non vi è più una unica callback che dobbiamo smistare in base alle richieste,
+  ma abbiamo un and-point. Nel app.get(percorso, function) nel percorso possiamo già
+  smistare le richieste.
+
+Lezione5 --> riprendi dotenv Lezione4
+- A cosa serve? Caricare parametri indicati nel file .env
+- Come scaricarlo?
+    1. Installa pacchetto e aggiungilo alle dipendenze
+            comando --> npm install dotenv --save
+            (scritto nel file package.json nelle "dependencies")
+    2. Crea file .env e scrivi le varibaili del server (no ;)
+- Come includerlo nel file .js?
+    //includi libreria
+    require("dotenv").config();
+
+    //utilizza variabili in .env
+    process.env.nomeVariabile
+
+Lezione5 --> Postman (https://www.postman.com/)
+
+
+Lezione5 --> Teoria
+
+                                             routers <--http(request)
+                                                |
+                                                |
+database <--> models<-(read/write data)-> controllers --> http(response) con html
+                                                ^
+                                                |
+                                              Views
+                                              (templates)
+
+NB: Il controller è una funzione che riceve la richiesta girata dal router,
+    la elabora, ottiene ciò che è richiesto dalla request e rinvia la risposta.
+
+NB: Model + Controller = elabora la richiesta.
+    Il Model accede al database per reperire i dati, poi svolge operazioni su di essi.
+
+NB: Le Views sono i modi con cui l'utente interagisce, su cui poi vengono mostrati i dati.
+        es. la pagina html
