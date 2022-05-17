@@ -1,0 +1,9 @@
+Crea un file "main.js" di partenza. Crea un array.
+
+Crea un modulo "studenti.js" con le seguenti funzioni:
+- maniera sincrona
+- scrittura array in un file json
+- lettura array in un file json
+- data una struttura dati, aggiungila nel file
+- passa struttura dati come parametro e li ritorna ordinati
+- salvataggio json

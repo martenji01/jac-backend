@@ -1,0 +1,130 @@
+Lezione 2 --> Javascript basi
+- Più per front-end
+
+- Cicli if
+    if(a == b)
+        comandi if;
+    else
+        comdandi else;
+
+    if(a === b) //confronta anche il tipo della variabile, oltre al contenuto
+        comandi if;
+    else
+        comdandi else;
+
+- Operatore di confronto "typeof" (verifica tipo all'interno della variabile)
+    es.
+    var a = 1;
+    console.log(typeof a); // stampa --> number
+    console.log(typeof b); // stampa --> string
+
+- Operatore && (and) per aggiugere più condizioni ad if
+
+    if(a == b && typeof a == typeof b)
+        comandi if;
+    else
+        comdandi else;
+
+    PS: quello che si ottiene è lo stesso di usare la condizione (a===b)
+
+- Stringhe e numeri
+    In javascript è possibile concatenare stringhe e numeri.
+    La concatenazione può essere ovviata o posticipata usando le tonde.
+    es.
+        a = "numero: " + 1; // stampa --> numero: 1
+        a = "numero: " + 1+2; // stampa --> numero: 12
+        a = "numero: " + (1+2); // stampa --> numero: 3
+        a = 1+2+"numero"; // stampa --> 3 numero
+
+- Confronto con diverso !==
+    if(a!==b)
+        console.log("diverso");
+
+- Vari operatori
+    incremento e decremento si usa il solito ++ e --
+    operatori && e || sono i soliti
+    il punto esclamativo può essere usato per negare una condizione
+
+- Operatori ternario comodo per fare operazioni su una linea
+    es.
+        var c = (a===b)? "vero": "falso";
+        // condizione ? comando da svolgere se è vero : comando da svolgere se è falso;
+
+- Ricorda che 0 = false, 1 = true
+
+- Array
+    var a=[]; // solo dichiarazione, l'array è vuoto, risulta di dimensione zero (non è undefined).
+    PS: se tento di accedere ad un valore dell'array vuoto, quello risulta undefined.
+    PS: gestione memoria dinamica
+    es.
+        a = [1, 2, 3];
+        a.length; // dimensione array = 3
+        var elemento = a.pop(); //toglie ultimo elemento dalla coda e ce lo ritorna
+        a.push(elemento); //metti elemento in coda
+
+        for(var el in a){
+            console.log(el); //stampa indice-chiave (che parte da zero)
+        }
+
+        for(var el of a){
+            console.log(el); //stampa contenuto
+        }
+
+- Oggetti
+    var obj = {}; //dichiarazione oggetto vuoto, si usano le graffe
+    obj = {name: "prova"}; //name è una proprietà. Alle proprietà si accede con oggetto.proprietà
+    //for su oggetto
+    for(var key in obj){
+        console.log(key); //elenco chiavi
+    }
+
+- Funzioni
+    //puoi assegnare alla proprietà di un oggetto una funzione
+        var obj = {}; //dichiarazione oggetto vuoto, si usano le graffe
+        obj = {
+            name: "nome",
+            congome: "cognome",
+            writeread: function(){
+                console.log("funzione dell'oggetto");
+            }
+        };
+        obj.writeread(); // accedi a funzione "writeread" dell'oggetto "obj"
+
+    //puoi creare una funzione a se stante
+        function writeread(){
+            console.log("funzione esterna");
+        }
+        writeread(); //accedi alla funzione "writeread"
+
+- Strumento "Node.js" come accedere
+    Click on "simbolo con play e coccinella" --> "Run and Debug" --> Node.js
+
+- Cattura errore
+    try{
+        codice da controllare;
+    } catch(parametro){
+        codice da svolgere se l'errore di verifica;
+    }
+
+- File ".json" sono file strutturati in modo tale che possano essere scritti e letti in maniera da mantenere il loro formato originale
+    JSON.parse //legge la stringa e la trasforma in oggetto
+    JSON.stringify(studenti) //trasforma l'oggetto in stringa
+    esempio:
+
+        writeback: function(nomeFile, oggetto){
+                fs.writeFileSync(nomeFile,JSON.stringify(oggetto));
+            },
+
+        readback: function(nomeFile){
+                return JSON.parse(fs.readFileSync(nomeFile), {encoding:"utf8"});
+            },
+
+        readadd: function(nomeFile,newOggetto){
+                var obj = this.readback(nomeFile);
+                obj.push(newOggetto);
+                this.writeback(nomeFile,obj);
+            }
+
+- COMANDO SUL PROMPT "npm -v"
+- COMANDO "npm init" per creare un package.json
+- Imposta test su "node main.js" e sul termina scrivi "npm run test"
