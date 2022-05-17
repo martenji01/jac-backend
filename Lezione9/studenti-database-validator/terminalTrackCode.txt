@@ -1,0 +1,4 @@
+npm init --yes
+npm install dotenv --save
+npm install mongoose --save   
+npm install --save express-validator

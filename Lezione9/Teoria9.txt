@@ -1,0 +1,16 @@
+Lezione9 -->  middleware per errori
+
+Express-validator (https://express-validator.github.io/docs/check-api.html)
+    - verifica cosa inseriamo nei parametri
+    - gestisce mancanza/incongruenza dati nel router, prima del controller
+    - npm install --save express-validator
+
+Gestione errori nel model
+- Nei campi della "structure" limitiamo anche su mongoose
+  i dati che possono essere inseriti (tipo, unique...)
+- validate middleware
+
+Lezione 9 --> collegare i dati di due modelli
+- fare parametri che referenziano a oggetti di altri modelli (https://mongoosejs.com/docs/populate)
+    es. stories: [{ type: Schema.Types.ObjectId, ref: 'Story' }]
+- funzione populate (https://mongoosejs.com/docs/populate#checking-populated)
