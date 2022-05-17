@@ -1,0 +1,38 @@
+Lezione 4 --> Cose relative alla lezione 3
+
+NB: Inizializzando un array, non sarà mai null.
+    Se vuoi verificare che sia vuoto usa la proprietà length().
+
+- Come in Java, puoi usare string.toLowerCase() o string.toUpperCase()
+  per fare confronti tra String, oltrepassando i problemi di maiuscole e minuscole.
+
+-  body = Buffer.concat(body).toString(); //è una proprietà degli array,
+  concatena i risultati, li rende stringa e li inserisce nella variabile body
+
+Lezione 4 --> Le Promise
+- PROMISE --> utili per la gestione di funzioni (es. del Timeout)
+                const myPromise = new Promise( function(){
+                    ...
+                });
+
+- async e await sono parole chiave che possono essere fruttate con le promise
+
+Lezione 4 --> I pacchetti con funioni base
+
+Pacchetto dotenv --> carica variabili di sistema 
+- Installa pacchetto: npm install nomepacchetto
+    comando --> npm install dotenv
+- Per salvare il package e condivderlo, diciamo al package.json cosa serve per farlo funzionare
+    comando --> npm install dotenv --save
+- Accedere globalmente alla libreria
+    comando --> npm install -g 
+
+PACCHETTO NODEMON
+- Installa pacchetto nodemon (modulo che lancia il programma in automatico quando viene modificato)
+    comando --> npm install -g nodemon
+- lancia dal terminale
+    comando --> nodemon [your application
+            es. nodemon index3.js]
+- Modifica su powershell (lanciato come amministartore)
+    comando --> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+- In ignore indica le cartelle JSON da ignorare
