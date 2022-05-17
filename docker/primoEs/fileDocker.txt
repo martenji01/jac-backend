@@ -1,0 +1,8 @@
+1) da ubuntu
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install -y nodejs
+COPY hello.js /
+CMD ["node", "hello"]
+
+2) nuovo esercizio
