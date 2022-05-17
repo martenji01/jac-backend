@@ -1,0 +1,28 @@
+Lezione 1 --> Variabili e costanti
+
+- Dichiarazione variabile (anche in riga, più variabili dichiarate insieme devono essere divise con virgole)
+    var nomevar;
+    var nomevar1, nomevar2;
+
+- Assegnazione valore (in seguito o nel momento stesso della dichiarazione.)
+    var a = 1;
+    a = 3;
+    var b = "prova"; // stampa --> prova
+    var c = "'prova'"; // stampa --> 'prova'
+    PS: In Javascript si possono usare sia apici doppi che singoli, sono intercambiabili.
+    PS: Nel momento in cui non si assegna nulla essa è "undefined".
+
+    var a = 1;
+    var b = "1";
+    //Stampa due uno, ma il primo è numero, il secondo è stringa.
+
+    PS: le variabili non sono fortemente tipitizzate, ma sono interscambiabili.
+
+- Valori assegnabili
+    var a = 1; //number
+    var b = "ciao"; //string
+    var c = false; //boolean
+
+- Stampa a video
+    console.log("ciao"); //ogni volta va a capo
+    console.log("ciao", "mondo"); // stampa sulla stessa linea, con uno spazio
