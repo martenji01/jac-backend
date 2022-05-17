@@ -1,0 +1,14 @@
+Lezione7 --> gestione statusCode
+
+- Errore
+    res.statusCode = 404;
+    res.send("Error 404");
+
+- Default
+    res.statusCode = 202;
+NB: se non viene specificato, lo status di default è 200.
+
+- Conflitti
+    res.statusCode = 409;
+
+(guarda documentazione online)

@@ -1,0 +1,42 @@
+Due modelli:
+- Autori:{
+    PIVA
+    name
+    surname
+    birth:{
+        date
+        place
+    }
+}
+
+- Libri: {
+    ISBN (International Standard Book Number)
+    PIVA
+    title
+    date
+}
+
+Request
+- All authors
+- All books
+- Books filtered by authors
+
+List path url
+- /authorsRead/ (GET)
+- /booksRead/ (GET)
+- /authorsActions/ + /addNewAuthor (POST)
+                     /filterAuthor (GET)
+                     /modifiedAuthor (PUT)
+                     /deleteAuthor (DELETE)
+
+- /booksActions/ + /addNewBook (POST)
+                  /modifiedBook (PUT)
+                  /filterBookByName (GET)
+                  /filterBookByAuthor (GET)
+                  /deleteBook (DELETE)
+
+
+Comandi track
+- npm init --yes
+- npm install express --save
+- npm install dotenv --save
