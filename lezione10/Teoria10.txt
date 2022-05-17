@@ -1,0 +1,62 @@
+Lezione 10 --> Intro colud
+
+1) Cloud privato --> accedi con credenziali
+2) Cloud ibrido --> parti in azienda e parti in Cloud.
+                    Utile quando avvengono problemi di connessione al cloud.
+3) Cloud pubblico --> servizi API, JSON... accessibile a tutti, fornisce ecosistema internet
+
+Successo cloud
+- Problema di sistemistica (architettura, tempi accesso) --> RISPOSTA CLOUD: applicazioni asS (as a Service)
+- sistemi/applicazioni monolitiche, ovvero un solo pezzo
+(presenza diverse macchine virtuali, rischio ridondanza o crollo tutto sistema) --> RISPOSTA CLOUD: microservizi e DevOps
+- problemi sicurezza --> RISPOSTA CLOUD: automazione sicurezza
+- dimensionamento hardware --> RISPOSTA CLOUD: pay as u go + pay on demand
+
+Componenti cloud
+- Containerizzazione --> virtualizzazione a livello applicativo, al posti di virtualizzare tutta la macchian linux
+                         ne faccio partire una minimale che interessa la parte che voglio testare
+- Versionamento --> tutto è codice
+- Continuous Integration & Repository --> Test, deploid, conferma
+- Runtime --> dove il codice viene fatto girare
+
+CI/CD Pipeline
+- commit change (cambio codice)
+- trigger build
+- build- modify of build outcome
+- run test
+- Modify of test outcome
+- celiver build to environment
+- deploy where necessary
+
+API --> porte di comunicazione standardizzate che prendono contenuti/info dal server e li portano all'applicaizone
+
+Registrazione
+- Repl.it 
+- Github
+- Bitbucket
+- Heroku
+- Mongo Atlas
+
+database: inflax, mongo
+
+Lezione 10 --> Java Ripasso
+- Javascript --> nato perché necessità di pagina web dinamica
+- Netscape --> metodo tramite cui è stato creato il linguaggio
+- JScript --> tentativo Microsoft di rivisionare javascript
+- ECMAScript --> reale nome javascript
+
+Applicazioni del linguaggio
+- web (animations svg)
+- server side (nodeJS)
+- database (mongoDB)
+- scripting
+
+Loose typing Vs duck typing
+
+Const --> non posso riassegnarlo, ma posso cambiare i valori
+es const b = {
+    field: 'ciao'
+}
+
+b = 12 //errore
+b.field = 12 //va bene
