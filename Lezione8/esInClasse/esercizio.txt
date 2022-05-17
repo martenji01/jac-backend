@@ -1,0 +1,3 @@
+Esercizio da fare:
+- Creare database studenti su MongoDB, sfruttando la connessione e await
+- Inseriscilo all'interno del server (controller, routers...)

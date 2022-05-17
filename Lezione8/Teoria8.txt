@@ -1,0 +1,103 @@
+Lezione8 --> esame requisiti
+    - Struttura server (suddivisione in controller, routers, models...)
+    - Liberi di fare ciò che vogliamo (database o JSON)
+    - fine dicembre
+
+Lezione8 - mio 
+  - https://en.wikipedia.org/wiki/Markdown
+  - Nodemon --> If you want to keep all your package configurations in one place, nodemon supports using package.json for configuration. Specify the config in the same format as you would for a config file but under nodemonConfig in the package.json file,
+                for example, take the following package.json:
+
+                {
+                  "name": "nodemon",
+                  "homepage": "http://nodemon.io",
+                  "...": "... other standard package.json values",
+                  "nodemonConfig": {
+                    "ignore": ["test/*", "docs/*"],
+                    "delay": 2500
+                  }
+                }
+
+Lezione8 --> Database
+- Programma MongoDB
+    (https://www.mongodb.com/try/download/community)
+    installa come Complete --> Network Service
+    Prega che non impieghi tre anni a scaricarsi
+
+- Database relazionali (Un database relazionale è una raccolta di elementi dati tra i quali sussistono relazioni predefinite.)
+- MongoDB ha relazioni più dinamiche, lavora con json
+    (definition: https://searchdatamanagement.techtarget.com/definition/MongoDB)
+
+- Di MongoDB useremo ODM (Object Document Mapper) perché usiamo file e non un reale database relazionale.
+  Le modifiche non avvengono tramite query, ma moduli per modificare i modelli nel nostro backend.
+  (In poche parole, quello che abbiamo fatto fino adesso)
+
+- Mongoose (https://mongoosejs.com/)
+    - Modulo che useremo su node.js per comunicare con MongoDB.
+    - Alla pagina sopra indicata trovi 
+
+        const mongoose = require('mongoose'); //modulo
+        mongoose.connect('mongodb://localhost:27017/test'); //connessione
+
+        const Cat = mongoose.model('Cat', { name: String }); //Model --> come deve essere mappata la struttura dati.
+                                                             //In parte, ripetto a prima altera la truttura e il modo in cui mappiamo l'oggetto alla struttura dati.
+                                                             //Se il model viene cambiato più avanti nel codice, gli oggetti istanziati con il model precedente non vengono modificati, ma rimangono con la struttura iniziale.
+
+        const kitty = new Cat({ name: 'Zildjian' }); //Istanziare un oggetto --> Crea un oggetto + parametri
+        kitty.save().then(() => console.log('meow')); //salva dato in maniera asincora (promise)
+
+      NB: Nel momento in cui ci connettiamo, crea da solo un database nel caso esso ancora non esista.
+
+Lezione8 --> comandi
+- libreria mongoose
+    const mongoose = require("mongoose");
+    const { middlewareFunctions } = require("mongoose/lib/helpers/query/applyQueryMiddleware");
+
+- Crea schema
+    const mystructure = mongoose.Schema({
+        campo: tipoDato,
+        campo: tipoDato,
+        ...
+        campo: tipoDato
+    });
+
+- Crea model
+  const mymodel = mongoose.model("nameModel", mystructure);
+- Crea istanza
+  1) istanza + parametri in contemporanea
+    var newObj = new structure({campo: Dato...});
+  2) istanza, poi inserisci i parametri
+     var newObj = new structure();
+     newObj.campo = Dato;
+
+     NB: i dati possono essere a loro volta oggetti, array... così come number, String.
+  
+  - Funzioni varie utili --> find()
+    1) ritorna tutti gli elementi
+      //7. Funzione di "search element" all'interno del modello
+        mymodel.find(function (err,result) {
+            if(err)
+            console.log(err);
+        console.log(result);
+        });
+
+    2) ricerca tramite ID
+    mymodel.findOne({ID:1},function (err,result) {
+        if(err)
+        console.log(err);
+    console.log(result);
+    });
+
+    3) ricerca tramite ID e modifica
+    mymodel.findOne({ID:1},function (err,singleObj) {
+        if(err)
+        console.log(err);
+        singleObj.campo="NewDato";
+        singleObj.save(function (err,result) {
+            if(err)
+                console.log(err);
+            
+            console.log(result);
+        });
+    
+    });
