@@ -1,0 +1,33 @@
+(esercizio svolto sopra a quello della lezione5)
+
+Lezione6 --> router
+
+1) Richiama nel file index
+    const router = express.Router();
+2) Usa una middle-where
+    app.use(req,res,next){
+        ...
+    }
+
+    es. "Stampa a video il log delle richieste"
+        app.use("/",function(req,res,next){
+            console.log(req.url,req.query);
+            next();
+        });
+    Con il "next" ci permette prima di controllare che i parametri passati siano coerenti
+    con ciò che ci aspettiamo, poi decidere se mandare un messaggio di errore o passare
+    alla prossima azione.
+
+NB: Al posto di POSTMAN puoi usare Insomnia
+
+Lezione6 --> CRUD (create, read, update, delete)
+- Operazioni principali da considerare nella creazione di API e Database
+    (tutto ciò che espone i dati all'input di un utente)
+
+- Creare elementi, leggerli, modificarli ed eventualmente cancellarli
+
+- In SQL = insert, select, update, delete.
+
+NB: Nelle arrow function il this è globale
+
+- In http = post(create a resource), get(retrieve a resource), put(update a resource), delete(delete a resource)
